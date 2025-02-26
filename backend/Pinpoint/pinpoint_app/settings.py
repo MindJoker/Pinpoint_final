@@ -25,20 +25,22 @@ SECRET_KEY = 'django-insecure-_r5wv+_kjqkh3rdw+za5b*1sbzfq3^oc8i%m7nbajdku8f!a7l
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1','localhost']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'app',
+    'rest_framework',
+    'channels',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'pinpoint_app',
-    'app',
+
 ]
 
 MIDDLEWARE = [
