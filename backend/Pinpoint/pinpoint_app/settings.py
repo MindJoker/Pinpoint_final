@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
 ]
 
 MIDDLEWARE = [
@@ -70,6 +69,8 @@ TEMPLATES = [
         },
     },
 ]
+
+ASGI_APPLICATION = "pinpoint_app.asgi.application"
 
 WSGI_APPLICATION = 'pinpoint_app.wsgi.application'
 
