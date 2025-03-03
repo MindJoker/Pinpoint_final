@@ -71,6 +71,14 @@ TEMPLATES = [
 ]
 
 ASGI_APPLICATION = "pinpoint_app.asgi.application"
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [("127.0.0.1", 6380)],
+        },
+    },
+}
 
 WSGI_APPLICATION = 'pinpoint_app.wsgi.application'
 
@@ -88,6 +96,9 @@ DATABASES = {
         'PORT': '3307',
         'OPTIONS': {
             'charset': 'utf8mb4',
+        },
+        'TEST': {
+            'NAME': 'test_pinpoint',
         },
     }
 }
@@ -133,3 +144,11 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
