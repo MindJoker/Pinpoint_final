@@ -22,10 +22,13 @@ from app import views
 # Routers provide an easy way of automatically determining the URL conf.
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
+router.register(r'groups', views.GroupViewSet)
 
 urlpatterns = [
     # path('', include('app.urls')),
     # path('chat/', include('app.urls')),
+    path('', include(router.urls)),
+    path('DRFTutorial/', include('snippets.urls')),
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 ]
