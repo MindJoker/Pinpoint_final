@@ -86,9 +86,9 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace 'com.anonymous.pinpoint'
+    namespace 'com.mind12k.pinpoint'
     defaultConfig {
-        applicationId 'com.anonymous.pinpoint'
+        applicationId 'com.mind12k.pinpoint'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
